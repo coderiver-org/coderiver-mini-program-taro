@@ -1,2 +1,1 @@
-# coderiver-taro
-CodeRiver mini-program by taro repository
+# coderiver小程序(taro)

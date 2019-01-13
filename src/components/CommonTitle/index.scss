@@ -1,0 +1,14 @@
+@import "../../styles/mixin";
+
+.common-title-component {
+  height: 70px;
+  padding: 0 40px;
+  @include fj();
+  align-items: center;
+  .text {
+    font-size:60px;
+  }
+  .img {
+    @include wh(70px, 70px);
+  }
+}
