@@ -23,6 +23,7 @@ class App extends Component {
 
   config = {
     pages: [
+      'pages/welcome/index',
       'pages/home/index',
       'pages/project/index',
       'pages/add/index',
