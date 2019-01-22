@@ -8,12 +8,13 @@ import { View } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
 import './index.scss';
 import TabBar from '../../components/TabBar';
-import icon_add from '../../images/common/tab_add.png';
+import add_icon_tab from '../../images/add/add_icon_tab.png';
 
 import Home from '../home/index'
 import Project from '../project/index'
 import Hero from '../hero/index'
 import Discover from '../discover/index'
+import Add from '../add/index'
 
 export default class Index extends Component {
   config = {
@@ -23,6 +24,7 @@ export default class Index extends Component {
     super(props);
     this.state = {
       currentPage: 'home',
+      showAddModal: false,
       tabBar: {
         "backgroundColor": "#ffffff",
         "color": "#9F9F9F",
@@ -40,7 +42,7 @@ export default class Index extends Component {
           },
           {
             "page": "add",
-            "icon": icon_add,
+            "icon": add_icon_tab,
             "isSpecial": true,
             "text": ""
           },
@@ -71,20 +73,26 @@ export default class Index extends Component {
       })
     }
   }
+  onToggleAdd = () => {
+    this.setState({
+      showAddModal: !this.state.showAddModal
+    })
+  }
 
   render() {
-    let {currentPage, tabBar} = this.state;
+    let {currentPage, showAddModal, tabBar} = this.state;
     return (
       <View className="index-page">
         { currentPage === 'home'? <Home/> : null }
         { currentPage === 'project'? <Project/> : null }
         { currentPage === 'hero'? <Hero/> : null }
         { currentPage === 'discover'? <Discover/> : null }
-        
+        { showAddModal ? <Add onToggleAdd={this.onToggleAdd}/> : null }
         <TabBar
           tabBar={tabBar}
           currentPage={currentPage}
           onSwichTab={this.onSwichTab}
+          onToggleAdd={this.onToggleAdd}
         />
       </View>
     )

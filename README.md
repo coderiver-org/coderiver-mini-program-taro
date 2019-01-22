@@ -1,3 +1,6 @@
+# coderiver-taro
+![预览](./ewm.jpg)
+
 ### 自定义tabbar解决方案
 
 第一种方法

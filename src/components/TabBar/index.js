@@ -1,15 +1,18 @@
 import Taro, { Component } from '@tarojs/taro';
-import { View, Text, Image, Navigator } from '@tarojs/components';
+import { View, Text, Image } from '@tarojs/components';
 import PropTypes from 'prop-types';
 import './index.scss';
 
 class TabBar extends Component {
   static propTypes ={
     onSwichTab: PropTypes.func,
+    onToggleAdd: PropTypes.func,
   }
 
   static defaultProps = {
     onSwichTab: function(){
+    },
+    onToggleAdd: function(){
     },
   };
   constructor(props) {
@@ -21,7 +24,7 @@ class TabBar extends Component {
   }
 
   render() {
-    let { currentPage, tabBar, onSwichTab } = this.props;
+    let { currentPage, tabBar, onSwichTab, onToggleAdd } = this.props;
     return (
 
       <View className="tab-bar-component">
@@ -33,7 +36,9 @@ class TabBar extends Component {
             >
               {
                 item.isSpecial
-                  ? <View className='special-wrapper'>
+                  ? <View className='special-wrapper'
+                    onClick={onToggleAdd}
+                  >
                     <Image className="tabbar-icon" src={item.icon} />
                   </View>
                   : <View

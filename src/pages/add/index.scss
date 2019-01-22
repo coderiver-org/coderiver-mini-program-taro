@@ -1,5 +1,32 @@
 @import "../../styles/mixin";
 
 .add-page {
-  @include wh(100%, 100%);
+  // @include wh(100%, 100%);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: $zIndex-modal;
+  background: rgba(0,0,0,.6);
+  image {
+    @include wh(104px, 104px);
+  }
+  .add-page-buttons {
+    @include wh(100%, 104px);
+    position: absolute;
+    bottom: 137px;
+    left: 0;
+    padding: 0 118px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .close {
+    position: absolute;
+    bottom: 17px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
