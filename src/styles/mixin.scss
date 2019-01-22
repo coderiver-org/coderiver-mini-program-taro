@@ -1,0 +1,89 @@
+/* colors
+-------------------------- */
+$color-primary: #458FE4 !default;
+$color-green: #40AEA8 !default;
+$color-black: #18262A !default;
+$color-black-light: #8E8E93 !default;
+$color-light: #9F9F9F !default;
+$color-white: #FFF !default;
+
+/* button-colors
+-------------------------- */
+$btn-active: #FFF !default;
+
+/* background-colors
+-------------------------- */
+$bg-color-white: #fff !default;
+
+/* border-colors
+-------------------------- */
+$border-color-light: #E5E5E5 !default;
+
+
+/* index
+-------------------------- */
+$zIndex-tabbar: 99;
+$zIndex-modal: 666;
+$zIndex-max-page: 999;
+
+
+/* methods
+-------------------------- */
+// 背景图片地址和大小
+@mixin bg($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+// 定位上下左右居中
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// 定位上下居中
+@mixin ct {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// 定位左右居中
+@mixin cl {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+// 宽高
+@mixin wh($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+// 字体大小，颜色
+@mixin sc($size, $color) {
+  font-size: $size;
+  color: $color;
+}
+
+// flex 布局和 子元素 对其方式
+@mixin fj($type: space-between) {
+  display: flex;
+  justify-content: $type;
+}
+
+/*多行文本溢出*/
+
+@mixin multi-line($a: 1) {
+	display: -webkit-box;
+	/* autoprefixer: off */
+	-webkit-box-orient: vertical;
+	/* autoprefixer: on */
+	-webkit-line-clamp: $a;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}

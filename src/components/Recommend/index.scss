@@ -1,0 +1,39 @@
+@import "../../styles/mixin";
+
+.recommend-component {
+  @include wh(670px, 528px);
+  // @include wh(100%, 528px);
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  margin: 40px auto 0;
+  color: $color-white;
+  &.team {
+    color: $color-black;
+  }
+  .name {
+    font-size: 40px;
+    position: absolute;
+    left: 40px;
+    top: 50px;
+    max-width: 500px;
+    @include multi-line();
+  }
+  .introduce {
+    font-size: 30px;
+    position: absolute;
+    left: 40px;
+    top: 115px;
+    max-width: 500px;
+    @include multi-line();
+  }
+  .tag {
+    @include wh(62px, 116px);
+    position: absolute;
+    right: 40px;
+    top: 0;
+  }
+  .avatar {
+    @include wh(100%, 100%);
+  }
+}

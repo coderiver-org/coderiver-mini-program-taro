@@ -2,7 +2,7 @@
   "miniprogramRoot": "./dist",
   "projectname": "code",
   "description": "coderiver-mini-program-taro",
-  "appid": "touristappid",
+  "appid": "wxa16e3d0428f474f9",
   "setting": {
     "urlCheck": true,
     "es6": false,

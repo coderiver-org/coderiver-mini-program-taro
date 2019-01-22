@@ -1,0 +1,15 @@
+@import "../../styles/mixin";
+
+.home-page {
+  @include wh(100%, 100%);
+  padding-bottom: 200px;
+  .welcome-text {
+    display: inline-block;
+    padding: 0 40px;
+    color: $color-black-light;
+    font-size: 28px;
+    font-family:Helvetica;
+    line-height: 28px;
+    margin-bottom: 26px;
+  }
+}

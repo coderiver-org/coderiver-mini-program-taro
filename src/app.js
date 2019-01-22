@@ -1,12 +1,11 @@
 import '@tarojs/async-await'
 import Taro, { Component } from '@tarojs/taro'
+import Home from './pages/home'
+import dva from './utils/dva'
+import models from './models'
 import { Provider } from '@tarojs/redux'
 
-import Index from './pages/index'
-
-import configStore from './store'
-
-import './app.scss'
+import './styles/base.scss'
 
 // 如果需要在 h5 环境中开启 React Devtools
 // 取消以下注释：
@@ -14,25 +13,34 @@ import './app.scss'
 //   require('nerv-devtools')
 // }
 
-const store = configStore()
+const dvaApp = dva.createApp({
+  initialState: {},
+  models: models,
+});
+const store = dvaApp.getStore();
 
 class App extends Component {
-
   config = {
     pages: [
-      'pages/index/index'
+      'pages/welcome/index',
+      'pages/index/index',
     ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
-    }
+      navigationBarTitleText: 'coderiver-taro',
+      navigationBarTextStyle: 'black',
+      navigationBarStyle: 'custom',
+    },
   }
 
-  componentDidMount () {}
+  componentWillMount() {
+  }
+  componentDidMount () {
+  }
 
-  componentDidShow () {}
+  componentDidShow () {
+  }
 
   componentDidHide () {}
 
@@ -45,7 +53,7 @@ class App extends Component {
   render () {
     return (
       <Provider store={store}>
-        <Index />
+        <Home />
       </Provider>
     )
   }

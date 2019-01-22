@@ -1,0 +1,78 @@
+@import "../../styles/mixin";
+
+.welcome-page {
+  padding: 0 50px;
+  color: $color-white;
+  @include wh(100%, 100%);
+  background-image: url('../../images/common/bg_welcome.jpg');
+  background-size: 100% 100%;
+  box-sizing: border-box;
+  > .logo {
+    width: 156px;
+    height: 100px;
+    margin-top: 100px;
+  }
+  > .text {
+    display: block;
+    font-size:60px;
+    line-height: 55px;
+    margin-top: 109px;
+  }
+  > .button-group {
+    margin-top: 109px;
+    .button-item {
+      margin-top: 30px;
+      background: transparent;
+      height: 100px;
+      border-radius:48px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid $color-white;
+      color: $color-white;
+      font-size:40px;
+      padding: 0 57px;
+      &.active {
+        background: $bg-color-white;
+        color: $color-green;
+        border: 0;
+        justify-content: flex-start;
+      }
+      .icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 40px;
+      }
+      .text {}
+    }
+  }
+  > .more-way {
+    margin-top: 50px;
+    .title {
+      font-size:32px;
+      line-height: 30px;
+    }
+    .login-way-items {
+      display: flex;
+      flex-direction: row;
+      margin-top: 70px;
+      .item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-right: 80px;
+        .icon {
+          width: 40px;
+          height: 32px;
+        }
+        .text {
+          font-size:32px;
+          line-height: 30px;
+          margin-left: 18px;
+        }
+      }
+    }
+    
+  }
+}
