@@ -2,10 +2,15 @@
 
 .recommend-component {
   @include wh(670px, 528px);
+  // @include wh(100%, 528px);
   position: relative;
-  border-radius:20px;
+  overflow: hidden;
+  border-radius: 20px;
   margin: 40px auto 0;
   color: $color-white;
+  &.team {
+    color: $color-black;
+  }
   .name {
     font-size: 40px;
     position: absolute;

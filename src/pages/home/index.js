@@ -29,8 +29,10 @@ class Home extends Component {
 
   render () {
     let {recommendProjects, recommendTeams} = this.props;
+    let name = null;
     return (
       <View className='home-page'>
+        <Text className="welcome-text">Hi,{name?name:'欢迎来到coderiver'}</Text>
         <CommonTitle text="为您推荐"/>
         {
           recommendProjects.length && recommendProjects.map((item, index) => {

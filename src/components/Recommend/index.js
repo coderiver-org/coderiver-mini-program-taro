@@ -19,7 +19,7 @@ class Recommend extends Component {
   render() {
     const { data, type } = this.props;
     return (
-      <View className="recommend-component">
+      <View className={"recommend-component "+type}>
         <Text className="name">{data.name}</Text>
         <Text className="introduce">{data.introduce}</Text>
         <Image className="tag" src={type === 'project' ? icon_recommend_project : icon_recommend_team} />
