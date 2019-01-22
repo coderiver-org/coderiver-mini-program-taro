@@ -16,16 +16,15 @@ export default class Welcome extends Component {
   config = {
     // navigationBarTitleText: 'welcome',
     navigationBarBackgroundColor: '#3FAEA8',
-    // navigationBarTextStyle: '#fff',
+    navigationBarTextStyle: '#fff',
   };
 
   componentDidMount = () => {
     
   };
 
-  switchTab(path) {
-    // 切换到到tabbar
-    Taro.switchTab({
+  redirectTo(path) {
+    Taro.redirectTo({
       url: `/pages/${path}/index`
     })
   }
@@ -37,13 +36,13 @@ export default class Welcome extends Component {
         <Text className="text">欢迎来到CodeRiver</Text>
         <View className="button-group">
           <Button className="button-item active"
-            onClick={this.switchTab.bind(this, 'home')}
+            onClick={this.redirectTo.bind(this, 'index')}
           >
             <Image className="icon" src={icon_github} />
             <Text className="text">使用Github账号登录</Text>
           </Button>
           <Button className="button-item"
-            onClick={this.switchTab.bind(this, 'home')}
+            onClick={this.redirectTo.bind(this, 'index')}
           >
             <Text className="text">创建账号</Text>
           </Button>

@@ -7,9 +7,6 @@ import './index.scss';
   ...discover,
 }))
 export default class Discover extends Component {
-  config = {
-    navigationBarTitleText: '',
-  };
 
   componentDidMount = () => {
 
@@ -18,7 +15,7 @@ export default class Discover extends Component {
   render() {
     return (
       <View className="discover-page">
-        discover
+        发现
       </View>
     )
   }

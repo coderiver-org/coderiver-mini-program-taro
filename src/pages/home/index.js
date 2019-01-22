@@ -4,6 +4,7 @@ import { connect } from '@tarojs/redux'
 
 import CommonTitle from '../../components/CommonTitle';
 import Recommend from '../../components/Recommend';
+import TabBar from '../../components/TabBar';
 
 import './index.scss'
 
@@ -12,10 +13,6 @@ import './index.scss'
   ...home,
 }))
 class Home extends Component {
-
-    config = {
-    navigationBarTitleText: ''
-  }
 
   componentDidMount () {
     this.props.dispatch({
@@ -45,6 +42,7 @@ class Home extends Component {
             return <Recommend data={item} type="team" key={index+item.avatar}/>
           })
         }
+        <TabBar/>
       </View>
     )
   }

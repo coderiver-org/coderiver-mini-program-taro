@@ -8,9 +8,6 @@ import CommonTitle from '../../components/CommonTitle';
   ...hero,
 }))
 export default class Hero extends Component {
-  config = {
-    navigationBarTitleText: '',
-  };
 
   componentDidMount = () => {
 
